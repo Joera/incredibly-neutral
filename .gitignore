@@ -1,0 +1,6 @@
+extra
+.continue
+contracts/.env
+contracts/node_modules
+contracts/ignition
+
