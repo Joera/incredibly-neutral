@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incredibly Neutral</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/buffer@6/index.js"></script>
+    <script> window.Buffer = buffer.Buffer;</script>
+    <script src="https://cdn.jsdelivr.net/npm/@lit-protocol/lit-node-client-vanilla/lit-node-client.js"></script>
+    <script type="module" src="script.js" defer></script>
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><span>Incredibly</span><span>Neutral</span></h1>
+        </header>
+        
+        <main>
+
+            <div id="intro">
+                <p>Hello, we are starting a new meetup in Amsterdam for people interested in digital commons, public blockchains, other decentralized technologies allowing new forms of coordination and ownership.</p>
+            </div>
+
+            <div id="tabs">
+                <ul>
+                    <li class="active"  onclick="toggleComponent(this,'component_tab_contact')">Mail me the dates</li>
+                    <li onclick="toggleComponent(this,'component_tab_info')">Tell me more</li>
+                </ul> 
+            </div>
+
+            <div id="component_tab_contact" class="component_tab" style="display: flex;">
+
+                <p>Each flyer contains a unique code that lets you mint an NFT as a token of your interest. This NFT stores an encrypted version of your email address and preferences—only our Incredibly Neutral CRM Bot can decrypt this information. Want to update your preferences? Simply scan the flyer again. Ech flyer can only be used once to mint.</p>
+                <form>
+                    <label for="permission">
+                        <input type="checkbox" id="permission" name="permission"> 
+                        E-mail me when dates have been set
+                    </label>
+                    
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email">
+            
+                    <label for="eth-address">Your address on Base</label>
+                    <input type="text" id="eth-address" name="eth-address" placeholder="0x..." required>
+                    
+                    <button type="submit">Submit</button>
+                </form>
+
+            </div>
+
+
+            <div id="component_tab_info" class="component_tab">
+
+            
+                <p>It's especially the oppurtunities for social change that matters to us. How can these decentralized technologies benefit our society? How can we create awareness around the various narratives and help us make informed decisions? First by better understanding the options and trade-offs ourselves and then by learning to communicate them to others
+
+                    How can we bring our own passion, knowledge and experience into the mainstream?
+                </p>
+
+                <p>Meetups are foremost about the ineraction with other people, meeting each other, learning from each other. Each meetup will have a topic, a central question or dillemma. We start with a central introduction and then break out in smaller groups to work on a case study. At the end we come together and present our ideas and findings. 
+                    We do not expect you to come up with ground breaking solutions or brilliant start up ideas. It is foremost about listening to other perspectives and learning to better articulate your own. In time we can learn how to formulate our thoughts as a community and grow into something of a decentralized research group or think tank.
+                </p>
+                <p>Some of us have been discussing these topics for many years. Others are new. We expect a renewed interest to grow with an increasing pace, while adoption gradually becomes mainstreeam. Professionals from other sectors who want to learn more are most welcome. So are power users, as well as criticastors and sceptics. These events are not for onboarding, speculative 'alpha' or shilling.</p>
+
+                <p>Topic ideas ((WIP):</p>
+
+                <ul>
+                    <li>Credible neutrality: when do want neutrality to be human and personal and when do we want to be impersonal and technological? Does decentralization make our inevitable non-neuitrality more visible and governable or does it just hide the decisions in code and initial design choices.</li>
+                    <li>Immutability vs. governance. Should rules be set in stone or be flexible. </li>
+                    <li>Defining decentralization: When can a protocol or project be considered decentralized, in the contexct of law and regulation. What does it mean for youu as a consumer?.</li>
+                    <li>privacy vs transparency/accountability</li>
+                    <li>ownership vs custody</li>
+                    <li>Network states vs coordi-nations</li>
+                    <li>Value accrual. Should this be directed to users, token holders or vc's.  Can these type of tokeneconmics inform decisions of users andf token holders?</li>
+                </ul>
+            </div>
+
+
+
+
+
+
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Incredibly Neutral</p>
+        </footer>
+    </div>
+</body>
+</html>
+
+<script>
+function toggleComponent(tabEl,componentId) {
+    document.querySelectorAll('#tabs ul li').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    tabEl.classList.add('active');
+    const componentTab = document.getElementById(componentId);
+    const isVisible = componentTab.style.display === 'flex';
+    const allTabs = document.querySelectorAll('.component_tab');
+    allTabs.forEach(tab => {
+        tab.style.display = 'none';
+    });
+    componentTab.style.display = 'flex';
+}
+</script>

@@ -1,0 +1,340 @@
+/* Font Import */
+@font-face {
+    font-family: 'KaushanScript';
+    src: url('fonts/KaushanScript-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: disc;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+
+/* Reset input styling */
+input:not([type="checkbox"]):not([type="radio"]) {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    outline: none;
+    /* background: none;
+    padding: 0;
+    margin: 0; */
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    line-height: inherit;
+    box-sizing: border-box;
+    box-shadow: none
+}
+
+/* Reset button styling */
+button {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    line-height: inherit;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+/* Reset specific input types */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="url"] {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+} 
+
+/* Remove focus ring (add your own if needed) */
+input:focus,
+button:focus {
+    outline: none;
+}
+
+/* Your custom styles start here */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.55;
+    padding: 1.5rem;
+    color: #FFF9EC;
+    background: #fc0000;
+    background: radial-gradient(circle, rgba(252, 0, 0, 1) 0%, rgba(191, 23, 23, 1) 100%);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+
+    height: 36rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+h1 {
+
+    /* margin-top: 6rem; */
+    font-family: 'KaushanScript';
+    font-size: 6.4rem;
+    position: relative;
+    line-height: 1.1;
+}
+
+
+h1 span {
+
+    display: block;
+}
+
+h1 span:last-child {
+    margin-left: 7rem;
+}
+
+main {
+    margin: 0;
+    
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+#tabs  {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 3rem 0 1.5rem 0;
+}
+
+#tabs ul {
+    list-style: none;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#tabs ul li {
+
+    border: 1px solid #fff;
+    padding: .5rem .5rem;
+    text-transform: lowercase;
+    border-radius: 4px;
+}
+
+#tabs ul li:first-child {
+
+
+    margin-right: .75rem;
+}
+
+    
+
+#tabs ul li:not(.active) {
+    cursor: pointer;
+}
+
+#tabs ul li.active {
+
+    background: #fff;
+    color: #fc0000;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 3rem 0 3rem 0;
+    position: relative;
+}
+
+form label {
+    /* font-size: 1rem; */
+    text-transform: lowercase;
+    margin-bottom: .25rem;
+    display: flex ;
+    flex-direction: row;
+    align-items: center;
+}
+
+form label[for="permission"] {
+
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+label[for="permission"] input[type="checkbox"]:checked::after {
+    content: "●";
+    position: absolute;
+    top: 40%;
+    left: 1.06rem;
+    transform: translate(-50%, -50%);
+    color: #fc0000;;
+    font-size: 3rem;
+}
+
+form input {
+    padding: .33rem .75rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    background: white;
+    border-radius: 4px;
+    max-width: 100%;
+}
+
+form input[type="checkbox"] {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    margin: 0 .75rem 0 0;
+}
+
+form button {
+
+    background: transparent;
+    text-transform: lowercase;
+    margin: 1.5rem 0;
+    padding: .25rem .75rem;
+    border: 1px solid white;
+    color: white;
+    border-radius: 4px;
+
+}
+
+.component_tab {
+    padding: 1.5rem 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+footer {
+
+    margin:  3rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media (max-width: 1000px)  {
+
+    body {
+        background: linear-gradient(180deg,rgba(252, 0, 0, 1) 0%, rgba(191, 23, 23, 1) 100%);
+        font-size: 1rem;
+
+    }
+
+    form {
+        width: calc(100vw - 3rem);
+    }
+
+    header {
+        height: 16rem
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+}
