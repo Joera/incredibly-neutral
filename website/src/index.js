@@ -4,6 +4,20 @@ import { verify } from './verify.js'
 
 const devNetterII = "0x4729d7061db66Bc8EDe9d7eB5c71c5fd0a47749c";
 
+const toggleComponent = (tabEl,componentId) => {
+    document.querySelectorAll('#tabs ul li').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    tabEl.classList.add('active');
+    const componentTab = document.getElementById(componentId);
+    const isVisible = componentTab.style.display === 'flex';
+    const allTabs = document.querySelectorAll('.component_tab');
+    allTabs.forEach(tab => {
+        tab.style.display = 'none';
+    });
+    componentTab.style.display = 'flex';
+}
+
 window.addEventListener('load', function() {
     const params = new URLSearchParams(location.search);
     
@@ -16,7 +30,7 @@ window.addEventListener('load', function() {
     if (verify(uid, devNetterII)) {
         // Do something with the parameter
         const main = new MainController();
-       
+        toggleComponent(this.document.querySelector("#tabs ul li:first-of-type"), "component_tab_contact")
     } else {
 
     }
