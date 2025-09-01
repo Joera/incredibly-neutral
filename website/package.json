@@ -1,0 +1,28 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ethers": "^6.0.0",
+    "ethers5": "npm:ethers@^5.8.0",
+    "@lit-protocol/auth-helpers": "^7.3.0",
+    "@lit-protocol/constants": "^7.3.0",
+    "@lit-protocol/contracts-sdk": "^7.3.0",
+    "@lit-protocol/encryption": "^7.3.0",
+    "@lit-protocol/lit-node-client": "^7.3.0",
+    "crypto-browserify": "^3.12.1",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
+    "webpack": "^5.101.3"
+  },
+  "devDependencies": {
+    "webpack-cli": "^6.0.1"
+  }
+}
