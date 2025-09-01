@@ -4,6 +4,7 @@ contracts/.env
 contracts/node_modules
 contracts/ignition
 admin/.env
+admin/node_modules
 website/node_modules
 website/dist
 
