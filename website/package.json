@@ -10,19 +10,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ethers": "^6.0.0",
-    "ethers5": "npm:ethers@^5.8.0",
     "@lit-protocol/auth-helpers": "^7.3.0",
     "@lit-protocol/constants": "^7.3.0",
     "@lit-protocol/contracts-sdk": "^7.3.0",
     "@lit-protocol/encryption": "^7.3.0",
     "@lit-protocol/lit-node-client": "^7.3.0",
     "crypto-browserify": "^3.12.1",
+    "ethers": "^6.0.0",
+    "ethers5": "npm:ethers@^5.8.0",
     "process": "^0.11.10",
     "stream-browserify": "^3.0.0",
     "webpack": "^5.101.3"
   },
   "devDependencies": {
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.2",
     "webpack-cli": "^6.0.1"
   }
 }

@@ -2,7 +2,7 @@ import { LitActionResource, LitPKPResource, createSiweMessage, generateAuthSig }
 import { LIT_ABILITY } from "@lit-protocol/constants";
 import { LitNodeClient } from "@lit-protocol/lit-node-client";
 import { ethers, Wallet } from "ethers5"; 
-import { delegateCapacityToken } from "./capacity.js";
+import { delegateCapacityToken } from "./capacity";
 
 export const createSessionSignatures = async (client: LitNodeClient, signer: Wallet, capacityTokenId: string) => {
 

@@ -1,0 +1,17 @@
+{
+	"dependencies": {
+		"@lit-protocol/constants": "^7.3.0",
+		"@lit-protocol/contracts-sdk": "latest",
+		"@lit-protocol/lit-node-client": "^7.3.0",
+		"@safe-global/api-kit": "^4.0.0",
+		"@safe-global/protocol-kit": "^6.1.0",
+		"@safe-global/safe-core-sdk-types": "^5.1.0",
+		"axios": "^1.11.0",
+		"dotenv": "^17.2.1",
+		"ethers": "^6.0.0",
+		"ethers5": "npm:ethers@^5.8.0",
+		"form-data": "^4.0.4",
+		"fs": "0.0.1-security",
+		"typestub-ipfs-only-hash": "^4.0.0"
+	}
+}

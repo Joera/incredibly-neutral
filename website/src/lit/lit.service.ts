@@ -9,8 +9,8 @@ import {
 import { LitContracts } from "@lit-protocol/contracts-sdk";
 import { ethers as ethers5 } from "ethers5"; // Ethers v5
 import { encryptString } from '@lit-protocol/encryption';
-import { createSessionSignatures } from "./session.js";
-import { delegateCapacityToken, mintCapacityToken } from "./capacity.js";
+import { createSessionSignatures } from "./session";
+import { delegateCapacityToken, mintCapacityToken } from "./capacity";
 
 const CHAIN_ID = "CRONICLE_YELLOWSTONE";
 
@@ -43,12 +43,12 @@ export class LitService {
         const provider = new ethers5.providers.JsonRpcProvider(LIT_RPC.CHRONICLE_YELLOWSTONE)
         // this.signer = new ethers5.Wallet(this.main.user.private_key, provider);
 
-        console.log("lit capacity token:", this.main.plugin.settings.lit_capacity_token);
-        if (this.main.plugin.settings.lit_capacity_token == undefined || this.main.plugin.settings.lit_capacity_token == "") {
-            this.main.plugin.settings.lit_capacity_token = await mintCapacityToken(this.main, this.signer, this.client, LIT_NETWORK.Datil);
-            console.log("minted capacity token");
-            this.main.plugin.saveSettings();
-        }
+        // console.log("lit capacity token:", this.main.plugin.settings.lit_capacity_token);
+        // if (this.main.plugin.settings.lit_capacity_token == undefined || this.main.plugin.settings.lit_capacity_token == "") {
+        //     this.main.plugin.settings.lit_capacity_token = await mintCapacityToken(this.main, this.signer, this.client, LIT_NETWORK.Datil);
+        //     console.log("minted capacity token");
+        //     this.main.plugin.saveSettings();
+        // }
 
         
     }
