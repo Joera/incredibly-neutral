@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Incredibly Neutral</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/buffer@6/index.js"></script>
-    <script> window.Buffer = buffer.Buffer;</script>
-    <script src="https://cdn.jsdelivr.net/npm/@lit-protocol/lit-node-client-vanilla/lit-node-client.js"></script>
-    <script type="module" src="script.js" defer></script>
+    <script src="script.js" defer></script>
 
 </head>
 <body>
@@ -20,7 +17,7 @@
         <main>
 
             <div id="intro">
-                <p>Hello, we are starting a new meetup in Amsterdam for people interested in digital commons, public blockchains, other decentralized technologies allowing new forms of coordination and ownership.</p>
+                <p>Hello, we are starting a new meetup in Amsterdam for people interested in digital commons, public blockchains, other decentralized technologies allowing new forms of coordination and ownership. We will focus in societal change and you can expect to participate in break out sessions.</p>
             </div>
 
             <div id="tabs">
@@ -30,10 +27,13 @@
                 </ul> 
             </div>
 
-            <div id="component_tab_contact" class="component_tab" style="display: flex;">
+            <div id="component_tab_contact" class="component_tab">
 
                 <p>Each flyer contains a unique code that lets you mint an NFT as a token of your interest. This NFT stores an encrypted version of your email address and preferences—only our Incredibly Neutral CRM Bot can decrypt this information. Want to update your preferences? Simply scan the flyer again. Ech flyer can only be used once to mint.</p>
                 <form>
+
+                    
+
                     <label for="permission">
                         <input type="checkbox" id="permission" name="permission"> 
                         E-mail me when dates have been set
@@ -44,6 +44,9 @@
             
                     <label for="eth-address">Your address on Base</label>
                     <input type="text" id="eth-address" name="eth-address" placeholder="0x..." required>
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password">
                     
                     <button type="submit">Submit</button>
                 </form>
@@ -54,15 +57,15 @@
             <div id="component_tab_info" class="component_tab">
 
             
-                <p>It's especially the oppurtunities for social change that matters to us. How can these decentralized technologies benefit our society? How can we create awareness around the various narratives and help us make informed decisions? First by better understanding the options and trade-offs ourselves and then by learning to communicate them to others
+                <!-- <p>How can these decentralized technologies benefit our society? How can we create awareness around the various narratives and help us make informed decisions? First by better understanding the options and trade-offs ourselves and then by learning to communicate them to others
 
                     How can we bring our own passion, knowledge and experience into the mainstream?
-                </p>
+                </p> -->
 
-                <p>Meetups are foremost about the ineraction with other people, meeting each other, learning from each other. Each meetup will have a topic, a central question or dillemma. We start with a central introduction and then break out in smaller groups to work on a case study. At the end we come together and present our ideas and findings. 
-                    We do not expect you to come up with ground breaking solutions or brilliant start up ideas. It is foremost about listening to other perspectives and learning to better articulate your own. In time we can learn how to formulate our thoughts as a community and grow into something of a decentralized research group or think tank.
+                <p>Meetups are foremost about the ineraction with other people, meeting each other, learning from each other. Each meetup will have a topic, a central question or dillemma. We start with a central introduction and then break out in smaller groups to work on a case study. At the end we come together and present our ideas and findings.</p> 
+                <p>We do not expect you to come up with ground breaking solutions or brilliant start up ideas. It is foremost about listening to other perspectives and learning to better articulate your own. In time we can learn how to formulate our thoughts as a community and grow into something of a decentralized research group or think tank.</p>
                 </p>
-                <p>Some of us have been discussing these topics for many years. Others are new. We expect a renewed interest to grow with an increasing pace, while adoption gradually becomes mainstreeam. Professionals from other sectors who want to learn more are most welcome. So are power users, as well as criticastors and sceptics. These events are not for onboarding, speculative 'alpha' or shilling.</p>
+                <p>Some of us have been discussing these topics for some time. Others are new. Professionals from other sectors who want to learn more are most welcome. So are power users, as well as criticastors and sceptics. The train is running though and won't stop so be prepared to jump on. These events are not for onboarding, speculative 'alpha' or shilling.</p>
 
                 <p>Topic ideas ((WIP):</p>
 
@@ -92,17 +95,5 @@
 </html>
 
 <script>
-function toggleComponent(tabEl,componentId) {
-    document.querySelectorAll('#tabs ul li').forEach(tab => {
-        tab.classList.remove('active');
-    });
-    tabEl.classList.add('active');
-    const componentTab = document.getElementById(componentId);
-    const isVisible = componentTab.style.display === 'flex';
-    const allTabs = document.querySelectorAll('.component_tab');
-    allTabs.forEach(tab => {
-        tab.style.display = 'none';
-    });
-    componentTab.style.display = 'flex';
-}
+
 </script>

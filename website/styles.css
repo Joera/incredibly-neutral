@@ -85,7 +85,7 @@ input:not([type="checkbox"]):not([type="radio"]) {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    border: none;
+    /* border: none; */
     outline: none;
     /* background: none;
     padding: 0;
@@ -147,9 +147,9 @@ body {
     font-size: 1.125rem;
     line-height: 1.55;
     padding: 1.5rem;
-    color: #FFF9EC;
-    background: #fc0000;
-    background: radial-gradient(circle, rgba(252, 0, 0, 1) 0%, rgba(191, 23, 23, 1) 100%);
+    color: #111;
+    /* background: #fc0000;
+    background: radial-gradient(circle, rgba(252, 0, 0, 1) 0%, rgba(191, 23, 23, 1) 100%); */
 }
 
 .container {
@@ -176,6 +176,7 @@ h1 {
     font-size: 6.4rem;
     position: relative;
     line-height: 1.1;
+    color: #fc0000;
 }
 
 
@@ -185,7 +186,7 @@ h1 span {
 }
 
 h1 span:last-child {
-    margin-left: 7rem;
+    margin-left: 5rem;
 }
 
 main {
@@ -215,7 +216,7 @@ p {
 
 #tabs ul li {
 
-    border: 1px solid #fff;
+    border: 2px solid #111;
     padding: .5rem .5rem;
     text-transform: lowercase;
     border-radius: 4px;
@@ -268,7 +269,7 @@ label[for="permission"] input[type="checkbox"]:checked::after {
     top: 40%;
     left: 1.06rem;
     transform: translate(-50%, -50%);
-    color: #fc0000;;
+    /* color: #fc0000;; */
     font-size: 3rem;
 }
 
@@ -279,6 +280,7 @@ form input {
     background: white;
     border-radius: 4px;
     max-width: 100%;
+    border: 2px solid #111;
 }
 
 form input[type="checkbox"] {
@@ -294,9 +296,10 @@ form button {
     text-transform: lowercase;
     margin: 1.5rem 0;
     padding: .25rem .75rem;
-    border: 1px solid white;
-    color: white;
+    border: 2px solid #fc0000;
+    color: #fff;
     border-radius: 4px;
+    background:#fc0000;
 
 }
 
@@ -321,7 +324,7 @@ footer {
 @media (max-width: 1000px)  {
 
     body {
-        background: linear-gradient(180deg,rgba(252, 0, 0, 1) 0%, rgba(191, 23, 23, 1) 100%);
+        /* background: linear-gradient(180deg,rgba(252, 0, 0, 1) 0%, rgba(191, 23, 23, 1) 100%); */
         font-size: 1rem;
 
     }
