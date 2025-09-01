@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Incredibly Neutral</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/buffer@6/index.js"></script>
-    <script> window.Buffer = buffer.Buffer;</script>
-    <script src="https://cdn.jsdelivr.net/npm/@lit-protocol/lit-node-client-vanilla/lit-node-client.js"></script>
-    <script type="module" src="script.js" defer></script>
+    <script type="module" src="./dist/bundle.js" defer></script>
 
 </head>
 <body>
@@ -20,12 +17,12 @@
         <main>
 
             <div id="intro">
-                <p>Hello, we are starting a new meetup in Amsterdam for people interested in digital commons, public blockchains, other decentralized technologies allowing new forms of coordination and ownership.</p>
+                <p>Hello, we are starting a new meetup in Amsterdam for people passionate about digital commons, public blockchains and other decentralized technologies that may help us implement new forms of coordination and ownership.</p>
             </div>
 
             <div id="tabs">
                 <ul>
-                    <li class="active"  onclick="toggleComponent(this,'component_tab_contact')">Mail me the dates</li>
+                    <li class="active"  onclick="toggleComponent(this,'component_tab_contact')">Great! Mail me the dates</li>
                     <li onclick="toggleComponent(this,'component_tab_info')">Tell me more</li>
                 </ul> 
             </div>

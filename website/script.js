@@ -29,17 +29,3 @@ const lightUpLit = (uid) => {
 }
 
 
-window.addEventListener('load', function() {
-    const params = new URLSearchParams(location.search);
-    
-    // Get all params as an object
-    const allParams = Object.fromEntries(params);
-    console.log(allParams);
-    
-    // Or get individual params
-    const uid = params.get('uid');
-    if (uid) {
-        // Do something with the parameter
-       lightUpLit(uid)
-    }
-});

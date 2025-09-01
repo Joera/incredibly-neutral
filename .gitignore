@@ -3,4 +3,5 @@ extra
 contracts/.env
 contracts/node_modules
 contracts/ignition
+admin/uids.js
 
