@@ -2,7 +2,7 @@ import { LitService } from './lit/lit.service.js';
 
 export class MainController {
 
-    lit;
+    lit: any;
 
     constructor() {
 
