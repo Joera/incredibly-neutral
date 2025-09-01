@@ -3,5 +3,7 @@ extra
 contracts/.env
 contracts/node_modules
 contracts/ignition
-admin/uids.js
+admin/.env
+website/node_modules
+website/dist
 
