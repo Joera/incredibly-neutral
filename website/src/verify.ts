@@ -1,4 +1,7 @@
-const parseCombined = (combinedString) => {
+import { getBytes } from "ethers";
+import { ethers } from "ethers";
+
+const parseCombined = (combinedString: string) => {
   // Code is always first 8 characters (4 bytes = 8 hex chars)
   const code = combinedString.substring(0, 8);
   // Signature is the rest (should be 132 chars for Ethereum signatures)
@@ -7,7 +10,7 @@ const parseCombined = (combinedString) => {
   return { code, signature };
 };
 
-export const verify = (combinedString, expectedAddress) => {
+export const verify = (combinedString: string, expectedAddress: string) => {
   try {
     const { code, signature } = parseCombined(combinedString);
     
@@ -28,7 +31,7 @@ export const verify = (combinedString, expectedAddress) => {
       expectedAddress: expectedAddress
     };
     
-  } catch(error) {
+  } catch(error: any) {
     return {
       valid: false,
       error: error.message

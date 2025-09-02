@@ -9,8 +9,8 @@ import {
 import { LitContracts } from "@lit-protocol/contracts-sdk";
 import { ethers as ethers5 } from "ethers5"; // Ethers v5
 import { encryptString } from '@lit-protocol/encryption';
-import { createSessionSignatures } from "./session.js";
-import { delegateCapacityToken, mintCapacityToken } from "./capacity.js";
+import { createSessionSignatures } from "./session";
+import { capacityToken } from "./capacity";
 
 const CHAIN_ID = "CRONICLE_YELLOWSTONE";
 
@@ -43,12 +43,12 @@ export class LitService {
         const provider = new ethers5.providers.JsonRpcProvider(LIT_RPC.CHRONICLE_YELLOWSTONE)
         // this.signer = new ethers5.Wallet(this.main.user.private_key, provider);
 
-        console.log("lit capacity token:", this.main.plugin.settings.lit_capacity_token);
-        if (this.main.plugin.settings.lit_capacity_token == undefined || this.main.plugin.settings.lit_capacity_token == "") {
-            this.main.plugin.settings.lit_capacity_token = await mintCapacityToken(this.main, this.signer, this.client, LIT_NETWORK.Datil);
-            console.log("minted capacity token");
-            this.main.plugin.saveSettings();
-        }
+        // console.log("lit capacity token:", this.main.plugin.settings.lit_capacity_token);
+        // if (this.main.plugin.settings.lit_capacity_token == undefined || this.main.plugin.settings.lit_capacity_token == "") {
+        //     this.main.plugin.settings.lit_capacity_token = await mintCapacityToken(this.main, this.signer, this.client, LIT_NETWORK.Datil);
+        //     console.log("minted capacity token");
+        //     this.main.plugin.saveSettings();
+        // }
 
         
     }
@@ -93,7 +93,7 @@ export class LitService {
             await this.init();
         }
         const time_2 =  Date.now();
-        const sessionSignatures  = await createSessionSignatures(this.client, this.signer, this.main.plugin.settings.lit_capacity_token);
+        const sessionSignatures  = await createSessionSignatures(this.client, this.signer, capacityToken.sig, params.walletAddress);
 
         console.log("cid:", action_cid);
         console.log("params:", params);
@@ -113,26 +113,36 @@ export class LitService {
         return response;
     }   
 
-    // async getInfo(pkpId: number) {
+    async runOpenAction(action_cid: string, params: any) {
 
-    //     if (this.contract == undefined || !this.contract.connected) {
-    //         console.log('Contract not connected, initializing...');
-    //         await this.init();
-    //     }
+        const time_1 = Date.now();
+        
+        if (this.client == undefined || this.client.ready == false) {
+            console.log('Client not connected, initializing...');
+            await this.init();
+        }
+        const time_2 =  Date.now();
+        const sessionSignatures  = await createSessionSignatures(this.client, this.signer, capacityToken.sig, params.walletAddress);
 
-    //     try {
-    //         // Assuming `getPermissions` is a method in your contract to fetch permissions
-    //         const permittedAddresses = await this.contract.pkpPermissionsContractUtils.read.getPermittedAddresses(pkpId);
-    //         console.log("Permitted Adresses for PKP ID:", pkpId, permittedAddresses);
-    //         const permittedActions = await this.contract.pkpPermissionsContractUtils.read.getPermittedActions(pkpId);
-    //         console.log("Permitted actions for PKP ID:", pkpId, permittedActions);
-    //         return {permittedAddresses, permittedActions};  
-    //     } catch (error) {
-    //         console.error("Error fetching permissions:", error);
-    //         throw error;
-    //     }
+        console.log("cid:", action_cid);
+        console.log("params:", params);
+
+        const time_3 = Date.now();
+
+        const response = await this.client.executeJs({
+            sessionSigs: sessionSignatures,
+            ipfsId: action_cid,
+            jsParams: params,
+        });
+
+        const time_4 = Date.now();
+        console.log("prepared action: ", ((time_3 - time_1) / 1000).toFixed(3), "seconds");
+        console.log("executed action: ", ((time_4 - time_3) / 1000).toFixed(3), "seconds");
     
-    // }
+        return response;
+    }   
+
+   
 
     async encryptWithUcc(content: string, unifiedAccessControlConditions: any[]) {
 

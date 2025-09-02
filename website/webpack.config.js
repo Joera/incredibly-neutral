@@ -2,7 +2,7 @@
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.js', // Your main file
+  entry: './src/index.ts', // Your main file
   mode: 'development',
   
   resolve: {
@@ -15,7 +15,8 @@ module.exports = {
       "util": require.resolve("util"),
       "url": require.resolve("url"),
       "assert": require.resolve("assert")
-    }
+    },
+    extensions: ['.tsx', '.ts', '.js']
   },
   
   plugins: [
@@ -29,5 +30,14 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: __dirname + '/dist'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+    ],
   }
 };

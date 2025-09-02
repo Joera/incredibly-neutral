@@ -2,11 +2,11 @@ import { LitActionResource, LitPKPResource, createSiweMessage, generateAuthSig }
 import { LIT_ABILITY } from "@lit-protocol/constants";
 import { LitNodeClient } from "@lit-protocol/lit-node-client";
 import { ethers, Wallet } from "ethers5"; 
-import { delegateCapacityToken } from "./capacity.js";
 
-export const createSessionSignatures = async (client: LitNodeClient, signer: Wallet, capacityTokenId: string) => {
 
-    const capacityDelegationAuthSig = await delegateCapacityToken(signer, client, capacityTokenId)
+export const createSessionSignatures = async (client: LitNodeClient, signer: Wallet, capacityDelegationAuthSig: any, walletAddress: string) => {
+
+    console.log(capacityDelegationAuthSig);
 
     const resourceAbilityRequests : any = [
         {
@@ -33,7 +33,7 @@ export const createSessionSignatures = async (client: LitNodeClient, signer: Wal
             uri,
             expiration,
             resources: resourceAbilityRequests,
-            walletAddress: await signer.getAddress(),
+            walletAddress,
             nonce: await client.getLatestBlockhash(),
             litNodeClient: client,
         });

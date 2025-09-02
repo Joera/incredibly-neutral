@@ -1,5 +1,8 @@
 extra
 .continue
+.env
+pnpm-lock.yaml
+node_modules
 contracts/.env
 contracts/node_modules
 contracts/ignition
@@ -7,3 +10,5 @@ admin/.env
 admin/node_modules
 website/node_modules
 website/dist
+pkp/.env
+pkp/node_modules
